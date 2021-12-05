@@ -1,4 +1,6 @@
 .weather-search {
+  display: block;
+  margin: auto;
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
   background: #fff;
   border-radius: 16px;
