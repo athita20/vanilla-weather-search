@@ -1,3 +1,83 @@
-.weather-icon {
-  width: 50px;
+.weather-search {
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  padding: 40px;
+  color: #878787;
+  margin-top: 50px;
+  max-width: 760px;
+}
+
+h1 {
+  margin: 20px 0 10px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 48px;
+  color: #272142;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  list-style: none;
+}
+
+li strong {
+  color: #f65282;
+  font-weight: 400;
+}
+
+.temperature-column {
+  padding-right: 15px;
+  padding-left: 60px;
+  padding-top: 10px;
+}
+
+.temperature-column img {
+  position: relative;
+  top: -34px;
+  width: 60px;
+}
+
+.temperature {
+  color: #212121;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 80px;
+}
+
+.units {
+  color: #212121;
+  font-size: 28px;
+  font-weight: 400;
+  position: relative;
+  top: -34px;
+}
+
+.units a {
+  color: #885df1;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  padding-top: 50px;
+}
+
+footer a {
+  color: #885df1;
+  text-decoration: none;
+}
+footer a :hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
