@@ -39,14 +39,14 @@ li strong {
 
 .temperature-column {
   padding-right: 15px;
-  padding-left: 60px;
+  padding-left: 10px;
   padding-top: 10px;
 }
 
 .temperature-column img {
   position: relative;
-  top: -34px;
-  width: 60px;
+  top: -31px;
+  right: -15px;
 }
 
 .temperature {

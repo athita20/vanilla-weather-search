@@ -29,12 +29,18 @@ function displayWeather(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let date = document.querySelector("#date");
+  let icon = document.querySelector("#weather-icon");
   city.innerHTML = `${response.data.name}`;
   description.innerHTML = `${response.data.weather[0].description}`;
   temp.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${response.data.wind.speed}`;
   date.innerHTML = formatDate(response.data.dt * 1000);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 let cityInput = "Bangkok";
