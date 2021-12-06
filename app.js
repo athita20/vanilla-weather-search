@@ -43,9 +43,20 @@ function displayWeather(response) {
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
-let cityInput = "Bangkok";
+function searchCity(cityInput) {
+  let apiKey = "31d9e4a87fd2740761d20aeaee4d9ab6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
 
-let apiKey = "31d9e4a87fd2740761d20aeaee4d9ab6";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
 
-axios.get(apiUrl).then(displayWeather);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector(".search-input").value;
+  searchCity(cityInput);
+}
+
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
+
+searchCity("Bangkok");
