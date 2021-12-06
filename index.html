@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Vanilla Weather Search</title>
   </head>
   <body>
@@ -18,15 +19,20 @@
       <div class="weather-search">
         <div class="row">
           <div class="col-6">
-            <h1>Bangkok</h1>
+            <h1 id="city"></h1>
             <ul>
+              <li><span id="date"></span><span id="description"></span></li>
               <li>
-                <span>Saturday </span><span>23:09, </span
-                ><span>overcast coulds</span>
-              </li>
-              <li>
-                <span>Humidity: <strong>68%</strong>, </span
-                ><span>Wind: <strong>2.44km/h</strong></span>
+                <span
+                  >Humidity:
+                  <strong><span id="humidity"></span><span>%</span></strong
+                  >, </span
+                ><span
+                  >Wind:
+                  <strong
+                    ><span id="wind"> </span><span>km/h</span></strong
+                  ></span
+                >
               </li>
             </ul>
           </div>
@@ -36,7 +42,7 @@
                 class="weather-icon"
                 src="https://icons-for-free.com/iconfiles/png/512/cloudy+foggy+weather+icon-1320196574869514194.png"
               />
-              <span class="temperature">27</span>
+              <span class="temperature" id="temp"></span>
               <span class="units"><a href="#">°C</a> |<a href="#"> °F</a></span>
             </div>
           </div>
