@@ -80,7 +80,6 @@ li strong {
 }
 
 .units {
-  color: #212121;
   font-size: 28px;
   font-weight: 400;
   position: relative;
@@ -89,6 +88,15 @@ li strong {
 
 .units a {
   color: #885df1;
+  text-decoration: none;
+}
+
+.weather-search .active {
+  color: #212121;
+  cursor: default;
+}
+
+.weather-search :hover {
   text-decoration: none;
 }
 

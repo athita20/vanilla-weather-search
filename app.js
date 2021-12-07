@@ -30,11 +30,14 @@ function displayWeather(response) {
   let wind = document.querySelector("#wind");
   let date = document.querySelector("#date");
   let icon = document.querySelector("#weather-icon");
-  city.innerHTML = `${response.data.name}`;
-  description.innerHTML = `${response.data.weather[0].description}`;
-  temp.innerHTML = Math.round(response.data.main.temp);
-  humidity.innerHTML = `${response.data.main.humidity}`;
-  wind.innerHTML = `${response.data.wind.speed}`;
+
+  cTemp = Math.round(response.data.main.temp);
+
+  city.innerHTML = response.data.name;
+  description.innerHTML = response.data.weather[0].description;
+  temp.innerHTML = cTemp;
+  humidity.innerHTML = response.data.main.humidity;
+  wind.innerHTML = response.data.wind.speed;
   date.innerHTML = formatDate(response.data.dt * 1000);
   icon.setAttribute(
     "src",
@@ -55,6 +58,31 @@ function handleSubmit(event) {
   let cityInput = document.querySelector(".search-input").value;
   searchCity(cityInput);
 }
+
+function displayFTemp(event) {
+  event.preventDefault();
+  let fTemp = Math.round((cTemp * 9) / 5 + 32);
+  let temp = document.querySelector("#temp");
+  cTempLink.classList.remove("active");
+  fTempLink.classList.add("active");
+  temp.innerHTML = fTemp;
+}
+
+function displayCTemp(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#temp");
+  cTempLink.classList.add("active");
+  fTempLink.classList.remove("active");
+  temp.innerHTML = cTemp;
+}
+
+let cTemp = null;
+
+let fTempLink = document.querySelector("#fLink");
+fTempLink.addEventListener("click", displayFTemp);
+
+let cTempLink = document.querySelector("#cLink");
+cTempLink.addEventListener("click", displayCTemp);
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
