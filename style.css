@@ -61,9 +61,10 @@ li strong {
 }
 
 .temperature-column {
-  padding-right: 15px;
   padding-left: 10px;
   padding-top: 10px;
+  float: right;
+  text-align: right;
 }
 
 .temperature-column img {
