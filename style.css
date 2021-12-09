@@ -6,23 +6,24 @@
   border-radius: 16px;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
   padding: 40px;
-  color: #878787;
+  color: rgba(39, 33, 66, 0.4);
   margin-top: 50px;
   max-width: 760px;
 }
 
-form {
+.weather-search form {
   margin-top: 30px;
   padding-bottom: 30px;
 }
 
-.search-input {
+.weather-search .search-input {
   background: #f9f7fe;
   border: none;
   padding: 15px 20px;
   border-radius: 6px;
   font-size: 16px;
   height: 50px;
+  color: rgba(39, 33, 66, 0.4);
 }
 
 .btn {
@@ -49,7 +50,6 @@ ul {
 li {
   font-weight: 500;
   margin-bottom: 5px;
-  color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   line-height: 20px;
   list-style: none;
@@ -99,6 +99,18 @@ li strong {
 
 .weather-search :hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.forecast-icon {
+  display: block;
+  margin: auto;
+  width: 38px;
+  height: 38px;
 }
 
 footer {
