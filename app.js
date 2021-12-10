@@ -22,7 +22,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}, `;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -51,6 +52,13 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "31d9e4a87fd2740761d20aeaee4d9ab6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   let city = document.querySelector("#city");
   let description = document.querySelector("#description");
@@ -73,8 +81,11 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+
   cTempLink.classList.add("active");
   fTempLink.classList.remove("active");
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(cityInput) {
@@ -119,5 +130,3 @@ let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
 searchCity("Bangkok");
-
-displayForecast();
