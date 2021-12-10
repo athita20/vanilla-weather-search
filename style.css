@@ -109,8 +109,19 @@ li strong {
 .forecast-icon {
   display: block;
   margin: auto;
-  width: 38px;
-  height: 38px;
+  width: 70px;
+  height: 70px;
+}
+
+.weather-forecast .forecast-temp {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #f65282;
+  font-weight: 700;
+}
+
+.min-temp {
+  opacity: 0.6;
 }
 
 footer {
