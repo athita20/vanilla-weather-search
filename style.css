@@ -1,3 +1,7 @@
+body {
+  background: #F6F4FC;
+}
+
 .weather-search {
   display: block;
   margin: auto;
@@ -9,11 +13,15 @@
   color: rgba(39, 33, 66, 0.4);
   margin-top: 50px;
   max-width: 760px;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .weather-search form {
   margin-top: 30px;
   padding-bottom: 30px;
+  border-bottom: 1px solid #f9f7fe;
 }
 
 .weather-search .search-input {
@@ -23,7 +31,6 @@
   border-radius: 6px;
   font-size: 16px;
   height: 50px;
-  color: rgba(39, 33, 66, 0.4);
 }
 
 .btn {
@@ -41,6 +48,7 @@ h1 {
   font-size: 38px;
   line-height: 48px;
   color: #272142;
+  padding-top: 20px;
 }
 
 ul {
@@ -62,7 +70,7 @@ li strong {
 
 .temperature-column {
   padding-left: 10px;
-  padding-top: 10px;
+  padding-top: 30px;
   float: right;
   text-align: right;
 }
@@ -85,25 +93,14 @@ li strong {
   font-weight: 400;
   position: relative;
   top: -34px;
-}
-
-.units a {
-  color: #885df1;
-  text-decoration: none;
-}
-
-.weather-search .active {
   color: #212121;
-  cursor: default;
-}
-
-.weather-search :hover {
-  text-decoration: none;
 }
 
 .weather-forecast {
   text-align: center;
   margin-top: 40px;
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 35px;
 }
 
 .forecast-icon {
@@ -127,7 +124,7 @@ li strong {
 footer {
   text-align: center;
   font-size: 14px;
-  padding-top: 50px;
+  padding-top: 35px;
 }
 
 footer a {

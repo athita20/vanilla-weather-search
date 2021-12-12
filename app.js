@@ -93,9 +93,6 @@ function displayWeather(response) {
   );
   icon.setAttribute("alt", response.data.weather[0].description);
 
-  cTempLink.classList.add("active");
-  fTempLink.classList.remove("active");
-
   getForecast(response.data.coord);
 }
 
@@ -111,31 +108,6 @@ function handleSubmit(event) {
   let cityInput = document.querySelector(".search-input").value;
   searchCity(cityInput);
 }
-
-function displayFTemp(event) {
-  event.preventDefault();
-  let fTemp = Math.round((cTemp * 9) / 5 + 32);
-  let temp = document.querySelector("#temp");
-  cTempLink.classList.remove("active");
-  fTempLink.classList.add("active");
-  temp.innerHTML = fTemp;
-}
-
-function displayCTemp(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp");
-  cTempLink.classList.add("active");
-  fTempLink.classList.remove("active");
-  temp.innerHTML = cTemp;
-}
-
-let cTemp = null;
-
-let fTempLink = document.querySelector("#fLink");
-fTempLink.addEventListener("click", displayFTemp);
-
-let cTempLink = document.querySelector("#cLink");
-cTempLink.addEventListener("click", displayCTemp);
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
